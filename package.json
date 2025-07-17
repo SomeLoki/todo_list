@@ -1,5 +1,5 @@
 {
-  "name": "baseline_template",
+  "name": "todo_list",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SomeLoki/baseline_template.git"
+    "url": "git+https://github.com/SomeLoki/todo_list.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SomeLoki/baseline_template/issues"
+    "url": "https://github.com/SomeLoki/todo_list/issues"
   },
-  "homepage": "https://github.com/SomeLoki/baseline_template#readme",
+  "homepage": "https://github.com/SomeLoki/todo_list#readme",
   "description": "",
   "devDependencies": {
     "css-loader": "^7.1.2",
