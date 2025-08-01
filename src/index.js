@@ -1,1 +1,3 @@
-import { TodoItem } from "./todo_gen";
+import { createProject } from "./project_gen";
+
+window.createProject = createProject
