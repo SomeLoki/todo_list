@@ -59,8 +59,8 @@ const hasChecklist = ( initialChecklist = [] ) => {
   return {
     getChecklist: () => [ ...state.checklist],
     addChecklistItem: ( newItem ) => state.checklist.push ( newItem ),
-    removeChecklistItem( itemToRemove ){
-      state.checklist = state.checklist.filter(( item ) => item !== itemToRemove );
+    removeChecklistItem( itemIdToRemove ){
+      state.checklist = state.checklist.filter(( item ) => item.getId() !== itemIdToRemove );
     },
   };
 };
