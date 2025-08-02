@@ -1,10 +1,6 @@
 import { hasTitle, hasComplete, hasDueDate, hasPriority, hasDescription, hasNotes, hasChecklist, hasId } from "./comp_funcs";
 
-const createProject = ( title, complete = false, dueDate, description = undefined, priority = "low", notes = undefined, checklist = [] ) => {
-  if (!title) {
-    console.log("Error title is required for projects");
-    return;
-  };
+const createProject = ( title, complete, dueDate, description, priority , notes , checklist ) => {
 
   const project = {
     ...hasTitle( title ),
@@ -17,7 +13,7 @@ const createProject = ( title, complete = false, dueDate, description = undefine
     ...hasId(),
   };
   
-  return project
+  return project;
 };
 
 export { createProject }
