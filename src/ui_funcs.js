@@ -12,26 +12,26 @@ function createContainer( classNames = [] ) {
 
 function createTitle( title, ElementType = "div", titleClasses = [], containerClasses = [] ){
   const titleContainer = createContainer( [ "title-container", ...containerClasses ] );
-  const newTitle = createDomElement( title, ElementType, [ "title", titleClasses ] );
+  const newTitle = createDomElement( title, ElementType, [ "title", ...titleClasses ] );
   titleContainer.appendChild( newTitle );
   return titleContainer;
 };
 
 function createPriority( priority, ElementType = "div", priorityClasses = [], containerClasses = [] ){
   const priorityContainer = createContainer( [ "priority-container", ...containerClasses ] );
-  const newPriority = createDomElement( priority, ElementType, [ "priority", priorityClasses ] );
+  const newPriority = createDomElement( priority, ElementType, [ "priority", ...priorityClasses ] );
   priorityContainer.appendChild( newPriority );
   return priorityContainer;
 };
 
 function createDueDate( dueDate, ElementType = "div", dueDateClasses = [], containerClasses = [] ){
   const dueDateContainer = createContainer( [ "dueDate-container", ...containerClasses ] );
-  const newDueDate = createDomElement( dueDate, ElementType, [ "dueDate", dueDateClasses ] );
+  const newDueDate = createDomElement( dueDate, ElementType, [ "dueDate", ...dueDateClasses ] );
   dueDateContainer.appendChild( newDueDate );
   return dueDateContainer;
 };
 
-function createCheckbox( checkedStatus , itemId ){
+function createCheckbox( checkedStatus, itemId ){
   const newCheckbox = createDomElement( undefined, "input", [ "checkbox" ] )
   newCheckbox.type = "checkbox";
   newCheckbox.id = itemId;
@@ -43,23 +43,12 @@ function createCheckbox( checkedStatus , itemId ){
 function createCompletion( checkedStatus = false, completionStatus, ElementType = "div", completionClasses = [], containerClasses = [], id ){
   const completionContainer = createContainer( [ "completion-container", ...containerClasses ] );
   const newCheckbox = createCheckbox( checkedStatus, id );
-  const newCompletion = createDomElement( completionStatus, ElementType, [ "completion", completionClasses ] );
+  const newCompletion = createDomElement( completionStatus, ElementType, [ "completion", ...completionClasses ] );
   completionContainer.append( newCheckbox,newCompletion );
   return completionContainer;
 };
 
-
-function createPageHeader( pageTitle, pagePriority, pageDueDate, pageCompleteStatus, pageCheckedstatus, pageId ){
-  const headerContainer = createContainer( [ "page-header", "header" ] );
-  const subtitleContainer = createContainer( [ "subtitle-header", "subtitle" ] );
-  const title = createTitle( pageTitle, "h1",  undefined, [ "title-header", ], );
-  const priority = createPriority( pagePriority, undefined, [ "priority-header" ], undefined );
-  const dueDate = createDueDate( pageDueDate, pagePriority, undefined, [ "dueDate-header" ], undefined )
-  const complete = createCompletion( pageCheckedstatus, pageCompleteStatus, undefined, [ "header-complete" ], [ "header-completion" ], pageId );
-  subtitleContainer.append( dueDate, complete );
-  headerContainer.append( priority, title, subtitleContainer );
-  return headerContainer;
-};
+export { createContainer, createTitle, createPriority, createDueDate, createCompletion }
 
 
 
